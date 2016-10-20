@@ -109,7 +109,7 @@ function Resolve(promise, x) {  /* 2.3 */
     });
   }
 
-  if (typeof x === 'object' || typeof x === 'function') {  /* 2.3.3 */
+  if (x && typeof x === 'object' || typeof x === 'function') {  /* 2.3.3 */
     let then, called = false;
 
     try {
