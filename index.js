@@ -76,15 +76,16 @@ Object.assign(Promise.prototype, {
     setTimeout(() => {  /* 2.2.4 */
       while (this.queue.length) {
         let callbacks = this.queue.shift();  /* 2.2.2.3 */ /* 2.2.3.3 */ /* 2.2.6.1 */ /* 2.2.6.2 */
+        let call = callbacks[fn];  /* 2.2.5 */
         let promise = callbacks.promise;
 
-        if (callbacks[fn] === noop) {  /* 2.2.7.3 */ /* 2.2.7.4 */
+        if (call === noop) {  /* 2.2.7.3 */ /* 2.2.7.4 */
           promise[promiseFn](val);
           continue;
         }
 
         try {
-          let x = callbacks[fn](val);  /* 2.2.2.1 */ /* 2.2.3.1 */ /* 2.2.5 */ /* 2.2.7.1 */
+          let x = call(val);  /* 2.2.2.1 */ /* 2.2.3.1 */
 
           Resolve(promise, x);  /* 2.2.7.1 */
         } catch (e) {
