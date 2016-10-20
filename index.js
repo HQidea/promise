@@ -147,3 +147,5 @@ function Resolve(promise, x) {  /* 2.3 */
     promise.fulfill(x);
   }
 }
+
+module.exports = Promise;

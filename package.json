@@ -1,0 +1,26 @@
+{
+  "name": "promise",
+  "version": "1.0.0",
+  "description": "A Promises/A+ implementation",
+  "main": "index.js",
+  "devDependencies": {
+    "promises-aplus-tests": "^2.1.2"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HQidea/promise.git"
+  },
+  "keywords": [
+    "promise",
+    "promises-aplus"
+  ],
+  "author": "HQidea <hqidea@yahoo.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HQidea/promise/issues"
+  },
+  "homepage": "https://github.com/HQidea/promise#readme"
+}
