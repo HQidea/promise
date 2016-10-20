@@ -103,7 +103,8 @@ function Resolve(promise, x) {  /* 2.3 */
 
   if (x instanceof Promise) {  /* 2.3.2 */
     return x.then((value) => {
-      promise.fulfill(value);
+      /* promise.fulfill(value); */
+      Resolve(promise, value);
     }, (reason) => {
       promise.reject(reason);
     });
